@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('hitchARideApp')
-  .controller('MainCtrl', function ($scope) {
-
+angular.module('hitchARideApp.MainCtrl', ['btford.socket-io'])
+  .controller('MainCtrl', function ($scope, socket) {
+    
   });

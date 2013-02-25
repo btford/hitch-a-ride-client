@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('hitchARideApp', [])
+angular.module('hitchARideApp', ['hitchARideApp.MainCtrl'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
