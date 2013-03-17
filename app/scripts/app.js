@@ -19,6 +19,14 @@ angular.module('hitchARideApp', ['hitchARideApp.MainCtrl'])
         templateUrl: 'views/wait.html',
         controller: 'WaitCtrl'
       })
+      .when('/trips', {
+        templateUrl: 'views/trips.html',
+        controller: 'TripsCtrl'
+      })
+      .when('/trip/:tripName', {
+        templateUrl: 'views/trip.html',
+        controller: 'TripCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
