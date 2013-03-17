@@ -15,10 +15,6 @@ angular.module('hitchARideApp', ['hitchARideApp.MainCtrl'])
         templateUrl: 'views/drive.html',
         controller: 'DriveCtrl'
       })
-      .when('/wait', {
-        templateUrl: 'views/wait.html',
-        controller: 'WaitCtrl'
-      })
       .when('/trips', {
         templateUrl: 'views/trips.html',
         controller: 'TripsCtrl'
