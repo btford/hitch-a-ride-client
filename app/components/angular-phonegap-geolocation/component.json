@@ -1,0 +1,18 @@
+{
+  "name": "angular-phonegap-geolocation",
+  "version": "0.0.1",
+  "main": "geolocation.js",
+  "dependencies": {
+    "angular": "~1.0.5",
+    "angular-phonegap-ready": "~0.0.1"
+  },
+  "gitHead": "ef2c3ecc2a34d3e510e8b89b3c83c5a5c688c97a",
+  "readme": "# angular-phonegap-geolocation\nBower Component for using AngularJS with [PhoneGap's Geolocation API](http://docs.phonegap.com/en/2.4.0/cordova_geolocation_geolocation.md.html#Geolocation).\n\n## Usage\n1. `bower install angular-phonegap-geolocation`\n2. Made sure the `cordova-*.js` script is in your `.html` file.\n3. Include the `geolocation.js` script, and this script's dependencies are included in your app.\n4. Add `btford.phonegap.geolocation` as a module dependency to your app.\n\n## License\nMIT\n",
+  "readmeFilename": "README.md",
+  "_id": "angular-phonegap-geolocation@0.0.1",
+  "description": "Bower Component for using AngularJS with [PhoneGap's Geolocation API](http://docs.phonegap.com/en/2.4.0/cordova_geolocation_geolocation.md.html#Geolocation).",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/btford/angular-phonegap-geolocation.git"
+  }
+}

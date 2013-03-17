@@ -1,0 +1,17 @@
+{
+  "name": "angular-phonegap-ready",
+  "version": "0.0.1",
+  "main": "ready.js",
+  "dependencies": {
+    "angular": "~1.0.5"
+  },
+  "gitHead": "373e2b663d452bc17f0b1f568bcc1b1d01471fb5",
+  "readme": "# angular-phonegap-ready\nHelper to wrap other PhoneGap APIs to ensure that calls happen after `deviceready` is fired.\n\n## License\nMIT\n",
+  "readmeFilename": "README.md",
+  "_id": "angular-phonegap-ready@0.0.1",
+  "description": "Helper to wrap other PhoneGap APIs to ensure that calls happen after `deviceready` is fired.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/btford/angular-phonegap-ready.git"
+  }
+}
