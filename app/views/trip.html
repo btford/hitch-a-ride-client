@@ -1,4 +1,4 @@
-<h2>{{trip.from}} to {{trip.to}}</h2>
+<h2>{{trip.type[0] | uppercase}}{{trip.type.substr(1)}} from {{trip.from}} to {{trip.to}}</h2>
 
 <div ng-show="mapUrl()">
   <hr>
@@ -15,4 +15,8 @@
       <p ng-bind-html-unsafe="step.html_instructions"></p>
     </div>
   </div>
+</div>
+
+<div ng-hide="trip.route">
+  <p>No match yet!</p>
 </div>

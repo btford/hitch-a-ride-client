@@ -3,7 +3,7 @@
   <h2>Trips</h2>
 
   <p ng-repeat="trip in trips">
-    <a href="trip/{{trip.type}}/from/{{trip.from}}/to/{{trip.to}}">{{trip.from}} -> {{trip.to}}</a>
+    <a href="trip/{{trip.type}}/from/{{trip.from}}/to/{{trip.to}}">{{trip.type[0] | uppercase}}{{trip.type.substr(1)}} | {{trip.from}} -> {{trip.to}}</a>
   </p>
 </div>
 
