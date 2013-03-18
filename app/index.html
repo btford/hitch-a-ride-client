@@ -15,43 +15,39 @@
     <link rel="stylesheet" href="styles/bootstrap-responsive.min.css">
     <link rel="stylesheet" href="styles/main.css">
   </head>
-  <body ng-app="hitchARideApp">
-    <!--[if lt IE 7]>
-      <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
-    <![endif]-->
+  <body ng-app="hitchARideApp" ng-controller="MainCtrl">
 
-    <!--[if lt IE 9]>
-      <script src="components/es5-shim/es5-shim.js"></script>
-      <script src="components/json3/lib/json3.min.js"></script>
-    <![endif]-->
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner" style="width: auto; padding: 0 20px;">
+        <a class="brand" href>HAR</a>
+        <ul class="nav">
+          <li route-active><a href="./">New</a></li>
+          <li route-active><a href="trips">Trips</a></li>
+        </ul>
+        <ul class="nav pull-right">
+          <li ng-show="alerts > 0"><a href="trips">
+            <span class="badge badge-important">{{alerts}}</span>
+          </a></li>
+        </ul>
+      </div>
+    </div>
+
 
     <div class="container">
-      
-      <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner" style="width: auto; padding: 0 20px;">
-          <a class="brand" href>HAR</a>
-          <ul class="nav">
-            <li class="active"><a href="#/">New</a></li>
-            <li><a href="#/trips">Trips</a></li>
-            <!--
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            -->
-          </ul>
-          <ul class="nav pull-right">
-            <li><a href>
-              <span class="badge badge-important">1</span>
-            </a></li>
-          </ul>
-        </div>
-      </div>
 
-      <div ng-view></div>
+      <!--[if lt IE 7]>
+        <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+      <![endif]-->
+
+      <div ng-view class="text-center"></div>
 
     </div>
 
     
-
+    <!--[if lt IE 9]>
+      <script src="components/es5-shim/es5-shim.js"></script>
+      <script src="components/json3/lib/json3.min.js"></script>
+    <![endif]-->
 
 
     <script src="components/angular/angular.js"></script>
@@ -65,6 +61,7 @@
     <script src="scripts/controllers/drive.js"></script>
     <script src="scripts/controllers/trips.js"></script>
     <script src="scripts/controllers/trip.js"></script>
+    <script src="scripts/directives/navBarTop.js"></script>
     <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

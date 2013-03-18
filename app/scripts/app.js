@@ -1,11 +1,10 @@
 'use strict';
 
-angular.module('hitchARideApp', ['hitchARideApp.MainCtrl'])
-  .config(function ($routeProvider) {
+angular.module('hitchARideApp', ['btford.socket-io'])
+  .config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'views/new-trip.html'
       })
       .when('/ride', {
         templateUrl: 'views/ride.html',
@@ -19,11 +18,16 @@ angular.module('hitchARideApp', ['hitchARideApp.MainCtrl'])
         templateUrl: 'views/trips.html',
         controller: 'TripsCtrl'
       })
-      .when('/trip/:tripName', {
+      .when('/trip/:type/from/:from/to/:to', {
         templateUrl: 'views/trip.html',
         controller: 'TripCtrl'
       })
       .otherwise({
         redirectTo: '/'
       });
+
+    $locationProvider.html5Mode(true);
+  })
+  .run(function (socket) {
+    socket.broadcast('trip:matched');
   });

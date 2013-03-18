@@ -10,7 +10,7 @@ angular.module('hitchARideApp')
 
     $scope.submit = function () {
       socket.emit('send:driver:trip', $scope.trip, function () {
-        $location.path('trips');
+        $location.path('trip/drive/from/' + $scope.trip.from + '/to/' + $scope.trip.to);
       });
     };
   });

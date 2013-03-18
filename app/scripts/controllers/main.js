@@ -1,11 +1,16 @@
 'use strict';
 
-angular.module('hitchARideApp.MainCtrl', ['btford.socket-io'])
-  .controller('MainCtrl', function ($scope, socket) {
-    socket.on('send:name', function (data) {
-      $scope.name = data.name;
+angular.module('hitchARideApp')
+  .controller('MainCtrl', function ($scope) {
+
+    $scope.alerts = 0;
+
+    $scope.$on('trip:matched', function () {
+      $scope.alerts += 1;
     });
-    socket.on('send:time', function (data) {
-      $scope.time = data.time;
+
+    $scope.$on('clear:alerts', function () {
+      $scope.alerts = 0;
     });
+
   });

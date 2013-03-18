@@ -1,1 +1,18 @@
-<p>This is the trip view.</p>
+<h2>{{trip.from}} to {{trip.to}}</h2>
+
+<div ng-show="mapUrl()">
+  <hr>
+  <h3>Open Map</h3>
+  <a class="btn btn-large btn-success" href="{{mapUrl()}}">Open</a>
+</div>
+
+<div ng-show="trip.route">
+  <hr>
+  <h3>Directions</h3>
+  <div ng-repeat="leg in trip.route.legs">
+    <h4>{{leg.start_address}} to {{leg.end_address}}</h4>
+    <div ng-repeat="step in leg.steps">
+      <p ng-bind-html-unsafe="step.html_instructions"></p>
+    </div>
+  </div>
+</div>

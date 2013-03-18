@@ -1,5 +1,13 @@
-<h2>Trips</h2>
 
-<p ng-repeat="trip in trips">
-  <a href="#/trip/{{trip.from}}|{{trip.to}}">{{trip.from}} -> {{trip.to}}</a>
-</p>
+<div ng-show="trips.length > 0">
+  <h2>Trips</h2>
+
+  <p ng-repeat="trip in trips">
+    <a href="trip/{{trip.type}}/from/{{trip.from}}/to/{{trip.to}}">{{trip.from}} -> {{trip.to}}</a>
+  </p>
+</div>
+
+<div ng-show="trips.length == 0">
+  <h2>Nothing to see here.</h2>
+  <a class="btn btn-large btn-info" href="./">Start a new Trip</a>
+</div>
