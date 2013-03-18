@@ -2,7 +2,9 @@
   "name": "hitch-a-ride-client",
   "url": "https://github.com/btford/hitch-a-ride-client",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "generator-angular": "~0.1.5"
+  },
   "devDependencies": {
     "grunt": "0.4.0rc7",
     "grunt-contrib-copy": "0.4.0rc7",
