@@ -13,7 +13,7 @@ angular.module('hitchARideApp')
     };
 
     $scope.mapUrl = function () {
-      if ($scope.trip.route) {
+      if ($scope.trip && $scope.trip.route) {
         return 'https://maps.google.com/maps?saddr=' +
           $scope.trip.from +
           '&daddr=' +
