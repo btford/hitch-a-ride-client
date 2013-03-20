@@ -1,5 +1,21 @@
-<p>From: <input ng-model="trip.from"></p>
-<p>To: <input ng-model="trip.to"></p>
+<form class="form-horizontal">
+  <div class="control-group">
+    <label class="control-label" for="from">From:</label>
+    <div class="controls">
+      <input class="input-xxlarge" id="from" type="text" search-map ng-model="trip.from" placeholder="Start Location" autocomplete="off">
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="to">To:</label>
+    <div class="controls">
+      <input class="input-xxlarge" id="to" type="text" search-map ng-model="trip.to" placeholder="End Location" autocomplete="off">
+    </div>
+  </div>
+</form>
+
+<div class="row-fluid">
+  <directions-map class="span12" trip-start="trip.from" trip-end="trip.to"></directions-map>
+</div>
 
 <button class="btn btn-large btn-success" ng-click="submit()">Submit</button>
 <a class="btn btn-large btn-danger" href="./">Back</a>

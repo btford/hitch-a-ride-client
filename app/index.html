@@ -9,7 +9,7 @@
     <title>Hitch-a-Ride</title>
     <base href="/app/">
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <link rel="stylesheet" href="styles/bootstrap-responsive.min.css">
@@ -32,16 +32,11 @@
       </div>
     </div>
 
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+    <![endif]-->
 
-    <div class="container">
-
-      <!--[if lt IE 7]>
-        <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
-      <![endif]-->
-
-      <div ng-view class="text-center"></div>
-
-    </div>
+    <div ng-view class="text-center container"></div>
 
     
     <!--[if lt IE 9]>
@@ -53,6 +48,8 @@
     <script src="components/angular/angular.js"></script>
     <script src="/socket.io/socket.io.js"></script>
 
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+
     <!-- build:js scripts/scripts.js -->
     <script src="components/angular-socket-io/socket.js"></script>
     <script src="scripts/app.js"></script>
@@ -62,6 +59,7 @@
     <script src="scripts/controllers/trips.js"></script>
     <script src="scripts/controllers/trip.js"></script>
     <script src="scripts/directives/navBarTop.js"></script>
+    <script src="scripts/directives/map.js"></script>
     <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
