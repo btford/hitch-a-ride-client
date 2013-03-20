@@ -2,13 +2,19 @@
 
 <div ng-show="mapUrl()">
   <hr>
-  <h3>Open Map</h3>
+  <h3>Open Google Maps</h3>
   <a class="btn btn-large btn-success" href="{{mapUrl()}}">Open</a>
 </div>
 
 <div ng-show="trip.route">
   <hr>
   <h3>Directions</h3>
+
+  <directions-map class="span12"
+    trip-start="trip.route.legs[0].start_address"
+    trip-end="trip.route.legs[2].end_address"
+    trip-waypoints="[{location: trip.route.legs[0].end_address}, {location: trip.route.legs[1].end_address}]"></directions-map>
+
   <div ng-repeat="leg in trip.route.legs">
     <h4>{{leg.start_address}} to {{leg.end_address}}</h4>
     <div ng-repeat="step in leg.steps">
@@ -18,5 +24,10 @@
 </div>
 
 <div ng-hide="trip.route">
+  <directions-map class="span12"
+    trip-start="trip.from"
+    trip-end="trip.to"></directions-map>
+
+  <hr>
   <p>No match yet!</p>
 </div>

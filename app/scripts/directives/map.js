@@ -29,7 +29,8 @@ angular.module('hitchARideApp')
       restrict: 'E',
       scope: {
         tripStart: '=',
-        tripEnd: '='
+        tripEnd: '=',
+        tripWaypoints: '='
       },
       link: function (scope, elt) {
         var directionsService = new google.maps.DirectionsService();
@@ -46,21 +47,31 @@ angular.module('hitchARideApp')
         var directionsDisplay = new google.maps.DirectionsRenderer();
         directionsDisplay.setMap(map);
 
-        var tripStart, tripEnd;
+        var tripStart, tripEnd, tripWaypoints;
 
         var requestDirections = function () {
+
           if (tripStart && tripEnd) {
-            directionsService.route({
+            var dirReq = {
               origin: tripStart,
               destination: tripEnd,
               travelMode: google.maps.DirectionsTravelMode.DRIVING
-            }, function (response, status) {
+            };
+            if (tripWaypoints) {
+              dirReq.waypoints = tripWaypoints;
+            }
+            directionsService.route(dirReq, function (response, status) {
               if (status == google.maps.DirectionsStatus.OK) {
                 directionsDisplay.setDirections(response);
               }
             });
           }
         };
+
+        scope.$watch('tripWaypoints', function (newVal) {
+          tripWaypoints = newVal;
+          requestDirections();
+        });
 
         scope.$watch('tripStart', function (newVal) {
           tripStart = newVal;
