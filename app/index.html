@@ -32,6 +32,10 @@
             Login
           </a></li>
           <li ng-show="login"><a href="profile">{{login.name}}</a></li>
+          <li ng-show="login">
+            <img ng-src="https://s2.googleusercontent.com/s2/photos/profile/{{login.id}}?sz=30"
+              style="padding: 10px;">
+          </li>
         </ul>
       </div>
     </div>
