@@ -11,9 +11,9 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/bootstrap-responsive.min.css">
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="components/hitch-a-ride-style/styles/bootstrap.amelia.css">
+    <link rel="stylesheet" href="components/hitch-a-ride-style/styles/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="components/hitch-a-ride-style/styles/main.css">
   </head>
   <body ng-app="hitchARideApp" ng-controller="MainCtrl">
 
@@ -28,6 +28,10 @@
           <li ng-show="alerts > 0"><a href="trips">
             <span class="badge badge-important">{{alerts}}</span>
           </a></li>
+          <li ng-hide="login"><a href="login">
+            Login
+          </a></li>
+          <li ng-show="login"><a href="profile">{{login.name}}</a></li>
         </ul>
       </div>
     </div>
