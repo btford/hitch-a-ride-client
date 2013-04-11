@@ -22,6 +22,10 @@ angular.module('hitchARideApp', ['btford.socket-io'])
         templateUrl: 'views/trip.html',
         controller: 'TripCtrl'
       })
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

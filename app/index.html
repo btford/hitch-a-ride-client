@@ -42,7 +42,6 @@
 
     <div ng-view class="text-center container"></div>
 
-    
     <!--[if lt IE 9]>
       <script src="components/es5-shim/es5-shim.js"></script>
       <script src="components/json3/lib/json3.min.js"></script>
@@ -51,19 +50,22 @@
 
     <script src="components/angular/angular.js"></script>
     <script src="/socket.io/socket.io.js"></script>
-
+    <script src="https://apis.google.com/js/client:plusone.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+
 
     <!-- build:js scripts/scripts.js -->
     <script src="components/angular-socket-io/socket.js"></script>
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/login.js"></script>
     <script src="scripts/controllers/ride.js"></script>
     <script src="scripts/controllers/drive.js"></script>
     <script src="scripts/controllers/trips.js"></script>
     <script src="scripts/controllers/trip.js"></script>
     <script src="scripts/directives/navBarTop.js"></script>
     <script src="scripts/directives/map.js"></script>
+    <script src="scripts/directives/gplus.js"></script>
     <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
