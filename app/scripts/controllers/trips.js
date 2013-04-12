@@ -4,6 +4,7 @@ angular.module('hitchARideApp')
   .controller('TripsCtrl', function ($scope, socket) {
 
     $scope.trips = [];
+    $scope.history = [];
 
     socket.emit('get:trips', null, function (data) {
       $scope.trips = data;

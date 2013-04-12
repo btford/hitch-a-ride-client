@@ -55,6 +55,18 @@
 
     <!-- build:js scripts/scripts.js -->
     <script src="components/angular-socket-io/socket.js"></script>
+    <script src="components/angular-phonegap-ready/ready.js"></script>
+    <script src="components/angular-phonegap-geolocation/geolocation.js"></script>
+
+    <script>
+    angular.module('btford.mock-phonegap-ready', []).
+    factory('phonegapReady', function () {
+      return function (fn) {
+        return fn;
+      };
+    });</script>
+
+    
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/login.js"></script>
