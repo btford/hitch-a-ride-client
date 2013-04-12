@@ -12,8 +12,10 @@ angular.module('hitchARideApp')
       link: function postLink(scope, element, attrs) {
         gapi.signin.render(element[0], {
           callback: function (r) {
-            login.fetchUser(r);
-            element.remove();
+            if (!r.error) {
+              login.fetchUser(r);
+              element.remove();
+            }
           },
           'clientid': '848717340266.apps.googleusercontent.com',
           'cookiepolicy': 'single_host_origin',

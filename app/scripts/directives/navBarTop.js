@@ -50,13 +50,17 @@ angular.module('hitchARideApp')
       link: function (scope, elt, attrs) {
         var target;
         if (attrs.href) {
-          target = '/' + attrs.href;
+          target = attrs.href;
         } else {
-          target = '/' + elt.find('a').attr('href');
+          target = elt.find('a').attr('href');
         }
-        if (target === '/./') {
-          target = '/';
+        if (target.substr(0, 1) === '.') {
+          target = target.substr(1);
         }
+        if (target.substr(0, 1) !== '/') {
+          target = '/' + target;
+        }
+
         scope.$on('$routeChangeSuccess', function () {
           if (target === $location.path()) {
             elt.addClass('active');

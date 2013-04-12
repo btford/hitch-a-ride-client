@@ -20,17 +20,14 @@
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner" style="width: auto; padding: 0 20px;">
         <a class="brand" href>HAR</a>
-        <ul class="nav">
-          <li route-active><a href="./trips">Trips</a></li>
+        <ul class="nav" ng-show="login">
+          <li route-active><a href="trips">Trips</a></li>
         </ul>
-        <ul class="nav pull-right">
+        <ul class="nav pull-right" ng-show="login">
           <li ng-show="alerts > 0"><a href="trips">
             <span class="badge badge-important">{{alerts}}</span>
           </a></li>
-          <li ng-hide="login"><a href="login">
-            Login
-          </a></li>
-          <li ng-show="login"><a href="profile" style="position: relative; padding-right: 50px;">{{login.name}} 
+          <li route-active><a href="profile" style="position: relative; padding-right: 50px;">{{login.name}} 
             <img ng-src="https://s2.googleusercontent.com/s2/photos/profile/{{login.id}}?sz=30"
               style="position: absolute; right: 10px; top: 11px;"></a>
           </li>
@@ -65,6 +62,7 @@
     <script src="scripts/controllers/drive.js"></script>
     <script src="scripts/controllers/trips.js"></script>
     <script src="scripts/controllers/trip.js"></script>
+    <script src="scripts/controllers/profile.js"></script>
     <script src="scripts/directives/navBarTop.js"></script>
     <script src="scripts/directives/map.js"></script>
     <script src="scripts/directives/gplus.js"></script>

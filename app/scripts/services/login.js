@@ -3,12 +3,15 @@
 /*global gapi:false*/
 
 angular.module('hitchARideApp')
-  .factory('login', function ($rootScope, $timeout, $location) {
+  .factory('login', function ($rootScope, $timeout, $location, $http) {
     var user,
       token,
       dest = '/';
 
     var fetchUser = function (r) {
+      if (r.error) {
+        return;
+      }
       token = r.access_token || gapi.auth.getToken().access_token;
       gapi.client.request({
         path: '/oauth2/v1/userinfo?alt=json&access_token=' + token,
@@ -44,6 +47,15 @@ angular.module('hitchARideApp')
       getUser: function () {
         return user;
       },
-      fetchUser: fetchUser
+      fetchUser: fetchUser,
+      logout: function () {
+        $http.jsonp('https://accounts.google.com/o/oauth2/revoke?token=' + token).
+          success(function () {
+            $location.path('/login');
+            dest = '/';
+            $rootScope.$broadcast('login', null);
+            user = null;
+          });
+      }
     };
   });
