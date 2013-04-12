@@ -4,10 +4,20 @@ angular.module('hitchARideApp')
   .controller('TripCtrl', function ($scope, socket, $routeParams, $location) {
 
     var getTripInfo = function () {
-      socket.emit('get:trip:info', $routeParams, function (data) {
-        $scope.trip = data;
-        if (!data) {
+      socket.emit('get:trip:info', $routeParams, function (trip) {
+        if (!trip) {
           $location.url('/');
+          return;
+        }
+
+        $scope.trip = trip;
+
+        if (trip.route) {
+          $scope.waypoints = [{
+            location: trip.route.legs[0].end_address
+          }, {
+            location: trip.route.legs[1].end_address
+          }];
         }
       });
     };

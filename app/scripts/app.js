@@ -14,17 +14,21 @@ angular.module('hitchARideApp', ['btford.socket-io'])
         templateUrl: 'views/drive.html',
         controller: 'DriveCtrl'
       })
+      .when('/trips/:id', {
+        templateUrl: 'views/trip.html',
+        controller: 'TripCtrl'
+      })
       .when('/trips', {
         templateUrl: 'views/trips.html',
         controller: 'TripsCtrl'
       })
-      .when('/trip/:type/from/:from/to/:to', {
-        templateUrl: 'views/trip.html',
-        controller: 'TripCtrl'
-      })
       .when('/login', {
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl'
+      })
+      .when('/profile', {
+        templateUrl: 'views/profile.html',
+        controller: 'ProfileCtrl'
       })
       .otherwise({
         redirectTo: '/'
@@ -32,6 +36,6 @@ angular.module('hitchARideApp', ['btford.socket-io'])
 
     $locationProvider.html5Mode(true);
   })
-  .run(function (socket) {
+  .run(function (socket, login) {
     socket.broadcast('trip:matched');
   });

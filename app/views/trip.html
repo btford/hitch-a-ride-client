@@ -13,7 +13,7 @@
   <directions-map class="span12"
     trip-start="trip.route.legs[0].start_address"
     trip-end="trip.route.legs[2].end_address"
-    trip-waypoints="[{location: trip.route.legs[0].end_address}, {location: trip.route.legs[1].end_address}]"></directions-map>
+    trip-waypoints="waypoints"></directions-map>
 
   <div ng-repeat="leg in trip.route.legs">
     <h4>{{leg.start_address}} to {{leg.end_address}}</h4>

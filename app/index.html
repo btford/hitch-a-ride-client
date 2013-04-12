@@ -21,8 +21,7 @@
       <div class="navbar-inner" style="width: auto; padding: 0 20px;">
         <a class="brand" href>HAR</a>
         <ul class="nav">
-          <li route-active><a href="./">New</a></li>
-          <li route-active><a href="trips">Trips</a></li>
+          <li route-active><a href="./trips">Trips</a></li>
         </ul>
         <ul class="nav pull-right">
           <li ng-show="alerts > 0"><a href="trips">
@@ -31,10 +30,9 @@
           <li ng-hide="login"><a href="login">
             Login
           </a></li>
-          <li ng-show="login"><a href="profile">{{login.name}}</a></li>
-          <li ng-show="login">
+          <li ng-show="login"><a href="profile" style="position: relative; padding-right: 50px;">{{login.name}} 
             <img ng-src="https://s2.googleusercontent.com/s2/photos/profile/{{login.id}}?sz=30"
-              style="padding: 10px;">
+              style="position: absolute; right: 10px; top: 11px;"></a>
           </li>
         </ul>
       </div>
@@ -70,6 +68,8 @@
     <script src="scripts/directives/navBarTop.js"></script>
     <script src="scripts/directives/map.js"></script>
     <script src="scripts/directives/gplus.js"></script>
+    <script src="scripts/services/login.js"></script>
+    <script src="scripts/filters/dasherize.js"></script>
     <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

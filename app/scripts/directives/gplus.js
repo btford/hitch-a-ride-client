@@ -1,7 +1,9 @@
 'use strict';
 
+/*global gapi:false*/
+
 angular.module('hitchARideApp')
-  .directive('gplus', function ($rootScope) {
+  .directive('gplus', function ($rootScope, login) {
 
     return {
       template: '<span></span>',
@@ -10,14 +12,8 @@ angular.module('hitchARideApp')
       link: function postLink(scope, element, attrs) {
         gapi.signin.render(element[0], {
           callback: function (r) {
-            gapi.client.request({
-              path: '/oauth2/v1/userinfo?alt=json&access_token=' + r.access_token,
-              callback: function (res) {
-                $rootScope.$apply(function () {
-                  $rootScope.$broadcast('login', res);
-                });
-              }
-            });
+            login.fetchUser(r);
+            element.remove();
           },
           'clientid': '848717340266.apps.googleusercontent.com',
           'cookiepolicy': 'single_host_origin',
