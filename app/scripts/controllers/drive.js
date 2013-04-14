@@ -15,15 +15,15 @@ angular.module('hitchARideApp')
     };
 
     $scope.geo = function () {
-      geolocation.getCurrentPosition(function (data) {
-        var url = 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' +
-          data.coords.latitude +
-          ',' +
-          data.coords.longitude +
-          '&sensor=true';
 
-        $http.jsonp(url).success(function (data) {
-          console.log(data);
+      geolocation.getCurrentPosition(function (data) {
+
+        socket.emit('reverse:geocode', {
+          latitude: data.coords.latitude,
+          longitude: data.coords.longitude
+        },
+        function (data) {
+          $scope.trip.from = data;
         });
       });
     };
