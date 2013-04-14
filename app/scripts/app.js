@@ -34,6 +34,10 @@ angular.module('hitchARideApp', [
       templateUrl: 'views/profile.html',
       controller: 'ProfileCtrl'
     })
+    .when('/notifications', {
+      templateUrl: 'views/notifications.html',
+      controller: 'NotificationsCtrl'
+    })
     .otherwise({
       redirectTo: '/'
     });
@@ -41,5 +45,5 @@ angular.module('hitchARideApp', [
   $locationProvider.html5Mode(true);
 })
 .run(function (socket, login) {
-  socket.broadcast('trip:matched');
+  socket.broadcast('update:notifications');
 });

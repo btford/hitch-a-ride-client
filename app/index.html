@@ -24,9 +24,7 @@
           <li route-active><a href="trips">Trips</a></li>
         </ul>
         <ul class="nav pull-right" ng-show="login">
-          <li ng-show="alerts > 0"><a href="trips">
-            <span class="badge badge-important">{{alerts}}</span>
-          </a></li>
+          <li route-active><a href="notifications">{{notificationCount}}</a></li>
           <li route-active><a href="profile" style="position: relative; padding-right: 50px;">{{login.name}} 
             <img ng-src="https://s2.googleusercontent.com/s2/photos/profile/{{login.id}}?sz=30"
               style="position: absolute; right: 10px; top: 11px;"></a>
@@ -80,6 +78,7 @@
     <script src="scripts/directives/gplus.js"></script>
     <script src="scripts/services/login.js"></script>
     <script src="scripts/filters/dasherize.js"></script>
+    <script src="scripts/controllers/notifications.js"></script>
     <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

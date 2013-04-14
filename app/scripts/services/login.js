@@ -3,7 +3,7 @@
 /*global gapi:false*/
 
 angular.module('hitchARideApp')
-  .factory('login', function ($rootScope, $timeout, $location, $http) {
+  .factory('login', function ($rootScope, $timeout, $location, $http, socket) {
     var user,
       token,
       dest = '/';
@@ -18,6 +18,7 @@ angular.module('hitchARideApp')
         callback: function (res) {
           $timeout(function () {
             user = res;
+            socket.emit('set:account', res);
 
             if ($location.path() === '/login') {
               $location.path(dest);

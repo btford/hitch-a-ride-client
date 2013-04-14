@@ -1,16 +1,24 @@
 'use strict';
 
 angular.module('hitchARideApp')
-  .controller('MainCtrl', function ($scope) {
+  .controller('MainCtrl', function ($scope, socket) {
 
-    $scope.alerts = 0;
+    $scope.notificationCount = 0;
+    $scope.notifications = [];
 
-    $scope.$on('trip:matched', function () {
-      $scope.alerts += 1;
+    /*
+    socket.emit('get:notifications', function (data) {
+      $scope.notifications = data;
+    });
+    */
+
+    $scope.$on('update:notifications', function (data) {
+      $scope.notificationCount += 1;
+      $scope.notifications = arguments[1];
     });
 
-    $scope.$on('clear:alerts', function () {
-      $scope.alerts = 0;
+    $scope.$on('clear:notifications', function () {
+      $scope.notifications = 0;
     });
 
     $scope.$on('login', function () {

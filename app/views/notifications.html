@@ -1,0 +1,11 @@
+<h1>Notifications</h1>
+
+<ul>
+  <li ng-repeat="not in notifications">
+    <a ng-href="trips/{{not.trip}}">{{not.message}}</a>
+  </li>
+</ul>
+
+<div ng-show="notifications.length == 0">
+  <p>You have no notifications</p>
+</div>
