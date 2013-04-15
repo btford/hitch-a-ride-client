@@ -1,5 +1,10 @@
 <h2>{{trip.type[0] | uppercase}}{{trip.type.substr(1)}} from {{trip.from}} to {{trip.to}}</h2>
 
+<div ng-show="trip.match">
+  <h3>Meet {{trip.match.name}}</h3>
+  <img src="{{trip.match.picture}}" alt="bff">
+</div>
+
 <div ng-show="mapUrl()">
   <hr>
   <h3>Open Google Maps</h3>
@@ -32,9 +37,19 @@
   <hr>
 </div>
 
+<hr>
 
 <div>
   <a href class="btn btn-large btn-warning" ng-click="cancel(trip.id)">Cancel This Trip</a>
   <p ng-show="trip.route">Warning: canceling this trip after you've been matched will lower your reputation.</p>
 </div>
 
+<hr>
+
+<div ng-show="trip.status == 'matched'">
+  <h2>Feedback</h2>
+  <p>When the trip's done, let us know how the {{trip.type}}r was!</p>
+  <a href class="btn btn-large btn-danger" ng-click="finish('success')">Perfect</a>
+  <a href class="btn btn-large btn-warning" ng-click="finish('late')">Late</a>
+  <a href class="btn btn-large btn-primary" ng-click="finish('noshow')">Didn't Show :(</a>
+</div>

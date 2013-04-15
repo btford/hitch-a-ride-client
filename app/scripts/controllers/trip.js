@@ -28,6 +28,15 @@ angular.module('hitchARideApp')
       });
     };
 
+    $scope.finish = function (status) {
+      socket.emit('finish:trip', {
+        id: $scope.trip.id,
+        status: status
+      }, function () {
+        $location.path('/trips');
+      });
+    };
+
     $scope.mapUrl = function () {
       if ($scope.trip && $scope.trip.route) {
         return 'https://maps.google.com/maps?saddr=' +
