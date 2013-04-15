@@ -5,11 +5,16 @@
 angular.module('hitchARideApp')
   .directive('gplus', function ($rootScope, login) {
 
+    var clientId = '848717340266.apps.googleusercontent.com';
+    var scope = 'https://www.googleapis.com/auth/userinfo.profile';
+
     return {
       template: '<span></span>',
       replace: true,
       restrict: 'E',
-      link: function postLink(scope, element, attrs) {
+      link: function postLink(s, element, attrs) {
+
+        // use Google API
         gapi.signin.render(element[0], {
           callback: function (r) {
             if (!r.error) {
@@ -17,10 +22,10 @@ angular.module('hitchARideApp')
               element.remove();
             }
           },
-          'clientid': '848717340266.apps.googleusercontent.com',
+          'clientid': clientId,
           'cookiepolicy': 'single_host_origin',
           'requestvisibleactions': 'http://schemas.google.com/AddActivity',
-          'scope': 'https://www.googleapis.com/auth/userinfo.profile'
+          'scope': scope
         });
       }
     };

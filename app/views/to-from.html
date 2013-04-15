@@ -20,6 +20,50 @@
 </div>
 
 <div class="row-fluid">
+  <h3>When Would You Like to Depart?</h3>
+  <form class="form-horizontal">
+    <div class="control-group">
+      <div class="controls">
+        <select ng-model="departureType" ng-init="departureType='soon'">
+          <option value="soon">Now (~5 mins)</option>
+          <option value="soon">Soon (~30 mins)</option>
+          <option value="today">Today (before 10:00pm)</option>
+          <option value="week">This Week</option>
+          <option value="other">Other...</option>
+        </select>
+      </div>
+    </div>
+    <div class="control-group" ng-show="departureType=='other'">
+      <label class="control-label">Between</label>
+      <div class="controls">
+        <input calendar ng-model="trip.earliest.date">
+        <div class="input-append">
+          <input class="span3" type="text" ng-model="trip.earliest.time">
+          <select class="span4">
+            <option>am</option>
+            <option>pm</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="control-group" ng-show="departureType=='other'">
+      <label class="control-label">and</label>
+      <div class="controls">
+        <input calendar ng-model="trip.latest.date"></input>
+        <div class="input-append">
+          <input class="span3" type="text" ng-model="trip.latest.time">
+          <select class="span4">
+            <option>am</option>
+            <option>pm</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+<div class="row-fluid">
   <hr>
   <div class="span12">
     <button class="btn btn-large btn-success" ng-click="submit()">Submit</button>

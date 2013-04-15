@@ -3,9 +3,19 @@
 angular.module('hitchARideApp')
   .controller('DriveCtrl', function ($scope, socket, $location, geolocation, $http) {
 
+    var now = new Date();
+
     $scope.trip = {
       from : 'Chicago, IL',
-      to: 'Los Angeles, CA'
+      to: 'Los Angeles, CA',
+      earliest: {
+        date: (now.getMonth()+1) + '/' + (now.getDate()) + '/' + now.getUTCFullYear(),
+        time: (now.getHours() + 1) + ':00'
+      },
+      latest: {
+        date: (now.getMonth()+1) + '/' + (now.getDate()) + '/' + now.getUTCFullYear(),
+        time: (now.getHours() + 2) + ':00'
+      }
     };
 
     $scope.submit = function () {
@@ -15,7 +25,6 @@ angular.module('hitchARideApp')
     };
 
     $scope.geo = function () {
-
       geolocation.getCurrentPosition(function (data) {
         socket.emit('reverse:geocode', {
           latitude: data.coords.latitude,

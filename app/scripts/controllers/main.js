@@ -6,6 +6,8 @@ angular.module('hitchARideApp')
     $scope.notificationCount = 0;
     $scope.notifications = [];
 
+    var lastNot = 0;
+
     /*
     socket.emit('get:notifications', function (data) {
       $scope.notifications = data;
@@ -13,12 +15,13 @@ angular.module('hitchARideApp')
     */
 
     $scope.$on('update:notifications', function (data) {
-      $scope.notificationCount += 1;
+      $scope.notificationCount += arguments[1].length - lastNot;
+      lastNot = arguments[1].length;
       $scope.notifications = arguments[1];
     });
 
     $scope.$on('clear:notifications', function () {
-      $scope.notifications = 0;
+      $scope.notificationCount = 0;
     });
 
     $scope.$on('login', function () {

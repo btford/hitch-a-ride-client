@@ -1,5 +1,10 @@
 
 <h1>Sup {{user.name}}</h1>
-<p>This is the profile view.</p>
+
+<h2>Here are your status:</h2>
+<p>You've been on {{profile.stats.success}} successful trips.</p>
+<p>You were late {{profile.stats.late}} times.</p>
+<p>You canceled on someone after being matched on {{profile.stats.late}} trips.</p>
+<p>You were a no-show {{profile.stats.noshow}} times.</p>
 
 <a href ng-click="logout()" class="btn btn-danger btn-large">Logout</a>

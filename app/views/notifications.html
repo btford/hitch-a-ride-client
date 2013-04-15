@@ -1,8 +1,8 @@
 <h1>Notifications</h1>
 
-<ul>
+<ul class="unstyled">
   <li ng-repeat="not in notifications">
-    <a ng-href="trips/{{not.trip}}">{{not.message}}</a>
+    {{not.time | date:'short'}} - <a ng-href="trips/{{not.trip}}">{{not.message}}</a>
   </li>
 </ul>
 

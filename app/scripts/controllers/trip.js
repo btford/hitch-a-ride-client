@@ -22,6 +22,12 @@ angular.module('hitchARideApp')
       });
     };
 
+    $scope.cancel = function () {
+      socket.emit('cancel:' + $scope.trip.type + 'r:trip', { id: $scope.trip.id }, function () {
+        $location.path('/trips');
+      });
+    };
+
     $scope.mapUrl = function () {
       if ($scope.trip && $scope.trip.route) {
         return 'https://maps.google.com/maps?saddr=' +

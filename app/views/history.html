@@ -1,3 +1,4 @@
+<h1>History for</h1>
 <h2>{{trip.type[0] | uppercase}}{{trip.type.substr(1)}} from {{trip.from}} to {{trip.to}}</h2>
 
 <div ng-show="mapUrl()">
@@ -23,18 +24,15 @@
   </div>
 </div>
 
+<div>
+  <p>Status: {{trip.status}}</p>
+</div>
+
 <div ng-hide="trip.route">
-  <p>No match for this trip yet!</p>
+  <p>You were not matched for this trip</p>
   <directions-map class="span12"
     trip-start="trip.from"
     trip-end="trip.to"></directions-map>
 
   <hr>
 </div>
-
-
-<div>
-  <a href class="btn btn-large btn-warning" ng-click="cancel(trip.id)">Cancel This Trip</a>
-  <p ng-show="trip.route">Warning: canceling this trip after you've been matched will lower your reputation.</p>
-</div>
-

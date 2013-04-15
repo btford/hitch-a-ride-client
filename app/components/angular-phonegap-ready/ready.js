@@ -8,6 +8,14 @@
 
 angular.module('btford.phonegap.ready', []).
   factory('phonegapReady', function ($rootScope) {
+
+    // cheap "polyfill"
+    if (!window.cordova) {
+      return function (fn) {
+        return fn;
+      };
+    }
+
     return function (fn) {
       var queue = [];
 
@@ -21,7 +29,7 @@ angular.module('btford.phonegap.ready', []).
         });
         impl = fn;
       }, false);
-      
+
       return function () {
         return impl.apply(this, arguments);
       };

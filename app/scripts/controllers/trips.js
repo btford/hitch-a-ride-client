@@ -10,6 +10,10 @@ angular.module('hitchARideApp')
       $scope.trips = data;
     });
 
+    socket.emit('get:history', null, function (data) {
+      $scope.history = data;
+    });
+
     $scope.$on('trip:matched', function () {
       $scope.matched = true;
     });

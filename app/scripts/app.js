@@ -3,7 +3,7 @@
 angular.module('hitchARideApp', [
   'btford.socket-io',
   'btford.phonegap.geolocation',
-  'btford.mock-phonegap-ready'
+  'btford.phonegap.ready'
 ])
 .config(function ($routeProvider, $locationProvider) {
   $routeProvider
@@ -38,11 +38,17 @@ angular.module('hitchARideApp', [
       templateUrl: 'views/notifications.html',
       controller: 'NotificationsCtrl'
     })
+    .when('/history/:id', {
+      templateUrl: 'views/history.html',
+      controller: 'HistoryCtrl'
+    })
     .otherwise({
       redirectTo: '/'
     });
 
-  $locationProvider.html5Mode(true);
+  if (!window.cordova) {
+    $locationProvider.html5Mode(true);
+  }
 })
 .run(function (socket, login) {
   socket.broadcast('update:notifications');
