@@ -30,8 +30,9 @@ directions-map img {
   directions-map {
     height: 400px;
   }
-}
 
-.navbar .nav > li > a {
-  padding: 15px 2px 14px;
+  .navbar .nav > li > a {
+    padding: 15px 8px 14px;
+  }
+
 }
