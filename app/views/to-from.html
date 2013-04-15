@@ -36,10 +36,10 @@
     <div class="control-group" ng-show="departureType=='other'">
       <label class="control-label">Between</label>
       <div class="controls">
-        <input calendar ng-model="trip.earliest.date">
+        <input calendar ng-model="trip.earliest.date" style="width: 120px;">
         <div class="input-append">
-          <input class="span3" type="text" ng-model="trip.earliest.time">
-          <select class="span4">
+          <input style="width: 20%;" type="text" ng-model="trip.earliest.time">
+          <select style="width: 30%;">
             <option>am</option>
             <option>pm</option>
           </select>
@@ -49,10 +49,10 @@
     <div class="control-group" ng-show="departureType=='other'">
       <label class="control-label">and</label>
       <div class="controls">
-        <input calendar ng-model="trip.latest.date"></input>
+        <input calendar ng-model="trip.latest.date" style="width: 120px;">
         <div class="input-append">
-          <input class="span3" type="text" ng-model="trip.latest.time">
-          <select class="span4">
+          <input style="width: 20%;" type="text" ng-model="trip.latest.time">
+          <select style="width: 30%;">
             <option>am</option>
             <option>pm</option>
           </select>
