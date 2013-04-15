@@ -1,4 +1,5 @@
 <h2>{{trip.type[0] | uppercase}}{{trip.type.substr(1)}} from {{trip.from}} to {{trip.to}}</h2>
+<h3>Leaving on {{trip.depart.date}} at {{trip.depart.time}}</h3>
 
 <div ng-show="trip.match">
   <h3>Meet {{trip.match.name}}</h3>

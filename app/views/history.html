@@ -1,5 +1,6 @@
 <h1>History for</h1>
 <h2>{{trip.type[0] | uppercase}}{{trip.type.substr(1)}} from {{trip.from}} to {{trip.to}}</h2>
+<h3>Left on {{trip.depart.date}} at {{trip.depart.time}}</h3>
 
 <div ng-show="mapUrl()">
   <hr>
@@ -7,25 +8,13 @@
   <a class="btn btn-large btn-success" href="{{mapUrl()}}">Open</a>
 </div>
 
-<div ng-show="trip.route">
-  <hr>
-  <h3>Directions</h3>
-
-  <directions-map class="span12"
-    trip-start="trip.route.legs[0].start_address"
-    trip-end="trip.route.legs[2].end_address"
-    trip-waypoints="waypoints"></directions-map>
-
-  <div ng-repeat="leg in trip.route.legs">
-    <h4>{{leg.start_address}} to {{leg.end_address}}</h4>
-    <div ng-repeat="step in leg.steps">
-      <p ng-bind-html-unsafe="step.html_instructions"></p>
-    </div>
-  </div>
+<div ng-show="trip.match">
+  <h3>Your friend: {{trip.match.name}}</h3>
+  <img src="{{trip.match.picture}}" alt="bff">
 </div>
 
 <div>
-  <p>Status: {{trip.status}}</p>
+  <h3>Your Rating: {{trip.status}}</h3>
 </div>
 
 <div ng-hide="trip.route">

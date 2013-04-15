@@ -6,8 +6,8 @@ angular.module('hitchARideApp')
     var now = new Date();
 
     $scope.trip = {
-      from : 'Chicago, IL',
-      to: 'Los Angeles, CA',
+      from : 'Joplin, MO',
+      to: 'Oklahoma City, OK',
       earliest: {
         date: (now.getMonth()+1) + '/' + (now.getDate()) + '/' + now.getUTCFullYear(),
         time: (now.getHours() + 1) + ':00'
