@@ -1,0 +1,33 @@
+
+directions-map {
+  width: 500px;
+  height: 500px;
+
+  display: inline-block;
+}
+
+/* Fix Bootstrap + Google Maps issue */
+/* https://github.com/twitter/bootstrap/issues/1552 */
+directions-map label {
+  width: auto; display:inline;
+}
+directions-map img {
+  max-width: none;
+}
+
+.pac-container {
+  color: rgb(85, 85, 85);
+  background-color: #fff;
+}
+
+@media (min-width: 980px) {
+  body {
+    padding-top: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  directions-map {
+    height: 400px;
+  }
+}

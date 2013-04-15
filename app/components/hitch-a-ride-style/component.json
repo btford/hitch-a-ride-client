@@ -1,0 +1,19 @@
+{
+  "name": "hitch-a-ride-style",
+  "version": "0.0.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "gitHead": "250dbd4ecae44452091ae0b18d1604459394c41e",
+  "readme": "# Hitch-a-Ride Styles\nShared styles and images for [Hitch-a-Ride](https://github.com/btford/hitch-a-ride). This is a work in progress.\n\n## Installation\nFor developmental use, clone this repo, `cd` into it and:\n\n```\nbower link\n```\n\nThen, to use it in the server or client:\n\n```\nbower install hitch-a-ride-styles\n```\n\n## Dependencies\nBased on Twitter Bootstrap, and theme from Bootswatch.\n\n## License\nMIT",
+  "readmeFilename": "README.md",
+  "_id": "hitch-a-ride-style@0.0.0",
+  "description": "Shared styles and images for [Hitch-a-Ride](https://github.com/btford/hitch-a-ride). This is a work in progress.",
+  "commit": "250dbd4ecae44452091ae0b18d1604459394c41e",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/btford/hitch-a-ride-style.git"
+  }
+}
