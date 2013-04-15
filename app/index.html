@@ -20,12 +20,12 @@
 
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner" style="width: auto; padding: 0 5px;">
-        <a class="brand" href style="padding: 15px 10px 14px;">HAR</a>
+        <a class="brand" href>HAR</a>
         <ul class="nav" ng-show="login">
           <li route-active><a href="">New</a></li>
           <li route-active><a href="trips">Trips</a></li>
         </ul>
-        <ul class="nav pull-right" ng-show="login">
+        <ul class="nav pull-right ng-cloak" ng-show="login">
           <li route-active><a href="notifications">{{notificationCount}}</a></li>
           <li route-active><a href="profile" style="position: relative; padding-right: 50px;">{{login.name}} 
             <img ng-src="https://s2.googleusercontent.com/s2/photos/profile/{{login.id}}?sz=30"

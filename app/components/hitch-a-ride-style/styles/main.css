@@ -31,3 +31,7 @@ directions-map img {
     height: 400px;
   }
 }
+
+.navbar .nav > li > a {
+  padding: 15px 10px 14px;
+}
