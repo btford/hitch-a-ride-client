@@ -37,14 +37,12 @@
   <hr>
 </div>
 
-<hr>
-
 <div>
   <a href class="btn btn-large btn-warning" ng-click="cancel(trip.id)">Cancel This Trip</a>
   <p ng-show="trip.route">Warning: canceling this trip after you've been matched will lower your reputation.</p>
+  <hr>
 </div>
 
-<hr>
 
 <div ng-show="trip.status == 'matched'">
   <h2>Feedback</h2>
@@ -52,4 +50,5 @@
   <a href class="btn btn-large btn-danger" ng-click="finish('success')">Perfect</a>
   <a href class="btn btn-large btn-warning" ng-click="finish('late')">Late</a>
   <a href class="btn btn-large btn-primary" ng-click="finish('noshow')">Didn't Show :(</a>
+<hr>
 </div>
